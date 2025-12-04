@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>averagegtag!</title>
+  <title>My Projects</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      background: black;
+      color: #ff3b3b;
+      overflow-x: hidden;
+    }
+
+    /* Animated dark red pulse background */
+    @keyframes pulseBG {
+      0% { background-color: #1a0000; }
+      50% { background-color: #300000; }
+      100% { background-color: #1a0000; }
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255,0,0,0.12), transparent 70%);
+      animation: pulseBG 6s infinite;
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Sidebar */
@@ -18,44 +35,188 @@
       left: 0;
       width: 150px;
       height: 100vh;
-      background: #222;
-      color: white;
+      background: #200000;
+      color: #ff3b3b;
       padding-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: center;
+      box-shadow: 2px 0 10px rgba(255,0,0,0.25);
     }
-
     .sidebar a {
-      color: white;
+      color: #ff5b5b;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
       cursor: pointer;
     }
 
     /* Content */
     .content {
       margin-left: 170px;
-      padding: 30px;
+      padding: 0;
     }
 
-    .section {
-      padding: 60px 0;
+    /* FULLSCREEN INTRO */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
     }
+    #home h1 {
+      font-size: 72px;
+      margin-bottom: 20px;
+      color: #ff4444;
+    }
+    #home p {
+      font-size: 30px;
+      max-width: 800px;
+      line-height: 1.4;
+    }
+
+    /* PROJECTS */
+    #projects {
+      padding: 80px 40px;
+    }
+    #projects h2 {
+      font-size: 50px;
+      margin-bottom: 40px;
+    }
+    .project-list a {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #ff6666;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
+</div>
+
+<div class="content">
+  <section id="home">
+    <h1>Welcome to My Projects</h1>
+    <p>Scroll down to explore everything I've created. Dark red, black, animated vibes included.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <a href="petrifiedprimates.html">Petrified Primates</a>
+      <!-- Add more here -->
+    </div>
+  </section>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: #ff3b3b;
+      overflow-x: hidden;
+    }
+
+    @keyframes pulseBG {
+      0% { background-color: #1a0000; }
+      50% { background-color: #300000; }
+      100% { background-color: #1a0000; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);
+      animation: pulseBG 6s infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 100vh;
+      background: #200000;
+      color: #ff3b3b;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 2px 0 10px rgba(255,0,0,0.2);
+    }
+
+    .sidebar a {
+      color: #ff5b5b;
+      text-decoration: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-left: 170px;
+      padding: 0;
+    }
+
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    #home h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      color: #ff4444;
+    }
+
+    #home p {
+      font-size: 28px;
+      max-width: 700px;
+      line-height: 1.4;
+    }
+
+    .section { padding: 60px 0; }
 
     .project-card {
-      background: white;
+      background: #150000;
+      color: #ff3b3b;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
+      box-shadow: 0 0 15px rgba(255,0,0,0.1);
+      width: 350px;
     }
 
     .project-card a {
       text-decoration: none;
-      color: blue;
+      color: #ff5555;
       font-weight: bold;
     }
   </style>
